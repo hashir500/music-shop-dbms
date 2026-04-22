@@ -3,6 +3,7 @@ use db_project;
 
 -- Part B: Creating tables and inserting data
 
+-- creating tbl_customers
 create table tbl_customers (
     Customer_ID int PRIMARY KEY,
     Customer_Name varchar(50),
@@ -11,11 +12,13 @@ create table tbl_customers (
     Address varchar(100)
 )
 
+-- creating tbl_category
 create table tbl_category (
     Category_ID int PRIMARY KEY,
     Category_Name varchar(50)
 )
 
+-- creating tbl_shop_instruments
 create table tbl_shop_instruments (
     Instrument_ID int PRIMARY KEY,
     S_Instrument_Name varchar(50),
@@ -27,6 +30,7 @@ create table tbl_shop_instruments (
     FOREIGN KEY (Category_ID) REFERENCES tbl_category(Category_ID)
 )
 
+-- creating tbl_rentals
 create table tbl_rentals (
     Rental_ID int PRIMARY KEY,
     Customer_ID int,
@@ -39,6 +43,7 @@ create table tbl_rentals (
     FOREIGN KEY (Instrument_ID) REFERENCES tbl_shop_instruments(Instrument_ID)
 )
 
+-- creating tbl_customer_instrument
 create table tbl_customer_instrument (
     Customer_Instrument_ID int PRIMARY KEY,
     Customer_ID int,
@@ -50,11 +55,13 @@ create table tbl_customer_instrument (
     FOREIGN KEY (Category_ID) REFERENCES tbl_category(Category_ID)
 )
 
+-- creating tbl_employee_types
 create table tbl_employee_types (
     Employee_Type_ID int PRIMARY KEY,
     Employee_Type varchar(50)
 )
 
+-- creating tbl_employees
 create table tbl_employees (
     Employee_ID int PRIMARY KEY,
     Employee_Name varchar(50),
@@ -63,6 +70,8 @@ create table tbl_employees (
     FOREIGN KEY (Employee_Type_ID) REFERENCES tbl_employee_types(Employee_Type_ID)
 )
 
+
+-- creating tbl_expenses
 create table tbl_expenses (
     Expense_ID int PRIMARY KEY,
     Description varchar(50),
@@ -75,6 +84,8 @@ create table tbl_expenses (
     FOREIGN KEY (employee_id) REFERENCES tbl_employees(Employee_ID)
 )
 
+
+-- creating tbl_repairs
 create table tbl_repairs(
     Repair_ID int PRIMARY KEY,
     customer_id int,
@@ -91,4 +102,15 @@ create table tbl_repairs(
     FOREIGN KEY (Customer_Instrument_ID) REFERENCES tbl_customer_instrument(Customer_Instrument_ID),
     FOREIGN KEY (Emp_ID) REFERENCES tbl_employees(Employee_ID)
 
+)
+
+
+-- creating tbl_temp
+create table tbl_temp (
+    Temp_ID int PRIMARY KEY,
+    Customer_ID int,
+    Instrument_ID int,
+    Rental_Date date,
+    Due_date date,
+    Total_Cost int
 )
