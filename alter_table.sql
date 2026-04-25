@@ -30,3 +30,7 @@ ALTER COLUMN cust_age varchar(5);
 -- dropping column
 ALTER TABLE tbl_temp
 DROP COLUMN Rental_Date;
+
+-- adding status column in temp table
+ALTER TABLE tbl_temp
+add status varchar(20);
