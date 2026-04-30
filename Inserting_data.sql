@@ -100,3 +100,17 @@ VALUES
 (6, 6, 6, '2024-04-15',25000, 39),
 (7, 7, 7, '2024-04-01',1200, 18),
 (8, 8, 8, '2024-04-10',6000, 20)
+
+INSERT INTO tbl_repairs 
+VALUES 
+(1, 1, NULL, 1, 'Acoustic guitar bridge re-gluing', '2024-04-01', '2024-04-05', 'Completed', 8000, 4),
+(2, 2, NULL, 2, 'Electric guitar pickup wiring fix', '2024-04-03', '2024-04-06', 'Completed', 5500, 3),
+(3, 1, 6, NULL, 'Shop Violin bow re-hair', '2024-04-10', NULL, 'In Progress', 3000, 3),
+(4, 4, NULL, 4, 'Antique violin full restoration', '2024-04-11', NULL, 'Pending Parts', 45000, 4),
+(5, 5, NULL, 5, 'Metal guitar fret leveling', '2024-04-12', '2024-04-15', 'Completed', 12000, 4),
+(6, 6, NULL, 6, 'Tenor Saxophone pad replacement', '2024-04-15', NULL, 'In Progress', 18000, 2), 
+(7, 7, NULL, 7, 'Bass guitar truss rod adjustment', '2024-04-18', '2024-04-19', 'Completed', 4000, 3),
+(8, 8, NULL, 8, 'Sitar string replacement & tuning', '2024-04-20', NULL, 'In Progress', 5000, 3);
+
+
+
